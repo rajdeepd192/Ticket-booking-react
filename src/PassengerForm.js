@@ -9,8 +9,8 @@ export default class Form extends React.Component {
             age: null,
             start_city: null,
             end_city: null,
-            contact_no: null,
-            passenger_id: null
+            contact_no: null
+            
             
         }
     }
@@ -41,16 +41,16 @@ export default class Form extends React.Component {
 
       submitHandler = (event) => {
         event.preventDefault();
-        alert("Form submitted ");
+        
         axios.post('http://localhost:8080/booking/passengers', {
             passenger_name: this.state.passenger_name,
             age: this.state.age,
             start_city: this.state.start_city,
             end_city:  this.state.end_city,
-            contact_no: this.state.contact_no,
-            passenger_id: this.state.passenger_id
+            contact_no: this.state.contact_no
+            
         })
-        .then(response => alert(response.body));
+        .then(response => alert("Form submitted"));
       }
 
     render() {
@@ -82,11 +82,7 @@ export default class Form extends React.Component {
                 type="text"
                 onChange={this.contact_noChangeHandler}
                />
-               <p> Enter Passenger Id </p>
-               <input
-                type="text"
-                onChange={this.passenger_idChangeHandler}
-                />
+               
               <p>
               <input type='submit'/>
               </p>
