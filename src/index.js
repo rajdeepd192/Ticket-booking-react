@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Form from './PassengerForm';
+import FormEq from './EnquiryForm';
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,20 +31,27 @@ function Ticket() {
   )
 }
 
+function Enquiry(){
+  return(
+    <h2 className="enquiry">Enquiry</h2>
+  )
+}
+
 function Default() {
   return (<Router>
     <div>
       
         <ul>
-          <li>
-            <Link to="/passenger">Passenger</Link>
-          </li>
-          <li>
-            <Link to="/train">Train</Link>
-          </li>
-          <li>
-            <Link to="/ticket">Ticket</Link>
-          </li>
+          
+            <Link to="/passenger">|   Passenger    </Link>
+          {/* </li>
+          <li> */}
+           <Link to="/train">|    Train   </Link> 
+          {/* </li>
+          <li> */}
+            <Link to="/ticket">|    Ticket    |</Link>
+            <Link to="/enquiry">   Enquiry   |</Link>
+          
         </ul>
       
 
@@ -57,6 +65,9 @@ function Default() {
         <Route path="/passenger">
           <Form/>
         </Route>
+        <Route path="/enquiry">
+          <FormEq/>
+          </Route>
       </Switch>
     </div>
   </Router>
