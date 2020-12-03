@@ -56,7 +56,7 @@ export default class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.submitHandler}>
-              <h1>Passenger Details</h1>
+              <h1>||Passenger Details||</h1>
               <p>Enter your Name:</p>
               <input
                 type="text"

@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Form from './PassengerForm';
 import FormEq from './EnquiryForm';
+import FormCan from './CancelForm';
+import FormTic from './TicketForm';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,13 +29,19 @@ function Passenger() {
 
 function Ticket() {
   return (
-    <h2>Ticket</h2>
+    <h2 className="ticket">Ticket</h2>
   )
 }
 
 function Enquiry(){
   return(
     <h2 className="enquiry">Enquiry</h2>
+  )
+}
+
+function Cancellation(){
+  return(
+    <h2 className="cancellation">Cancellation</h2>
   )
 }
 
@@ -51,6 +59,7 @@ function Default() {
           <li> */}
             <Link to="/ticket">|    Ticket    |</Link>
             <Link to="/enquiry">   Enquiry   |</Link>
+            <Link to="/cancellation">   Cancellation    |</Link>
           
         </ul>
       
@@ -60,13 +69,16 @@ function Default() {
           <Train />
         </Route>
         <Route path="/ticket">
-          <Ticket />
+          <FormTic/>
         </Route>
         <Route path="/passenger">
           <Form/>
         </Route>
         <Route path="/enquiry">
           <FormEq/>
+          </Route>
+        <Route path="/cancellation">
+          <FormCan/>
           </Route>
       </Switch>
     </div>
