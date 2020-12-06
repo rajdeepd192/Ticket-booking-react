@@ -7,7 +7,7 @@ export default class FormCan extends React.Component {
         super(props);
         this.state = {
             passenger_id: null,
-            submitted: false
+            
         }
     }
     idChangeHandler = (event) => {
@@ -18,7 +18,7 @@ export default class FormCan extends React.Component {
         event.preventDefault();
         axios.delete('http://localhost:8080/Cancel/deletepassenger/'+this.state.passenger_id)
         .then(response => {
-            this.setState({submitted: true});
+          alert("Ticket Cancelled");
         });
       }
       render() {
@@ -31,16 +31,12 @@ export default class FormCan extends React.Component {
                 onChange={this.idChangeHandler}
               />
                <p>
-              <input type='submit'/>
+              <input type='submit' value="Delete"/>
               </p>
             </form>
-            {this.state.submitted}
+            
             </div>
           );
     }
 }
 
-function deleteRow(row){
-    // var d = row.parentNode.parentNode.rowIndex;
-    document.getElementById('passengers').deleteRow(this.state.passenger_id);
- }
