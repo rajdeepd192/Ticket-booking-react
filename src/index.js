@@ -7,6 +7,8 @@ import Form from './PassengerForm';
 import FormEq from './EnquiryForm';
 import FormCan from './CancelForm';
 import FormTic from './TicketForm';
+import FormUp from './UpdateForm';
+import homeLogo from './homeLogo.jpg';
 import {
   BrowserRouter as Router,
   Switch,
@@ -48,9 +50,9 @@ function Cancellation(){
 function Default() {
   return (<Router>
     <div>
-      
-        <ul>
-          
+      <h1>WELCOME TO TICKET BOOKING SERVICE</h1>
+  <ul>
+ < marquee behavior="scroll" scrollamount="3" direction="left" onmouseover="this.stop();" onmouseout="this.start();">    
             <Link to="/passenger">|   Passenger    </Link>
           {/* </li>
           <li> */}
@@ -60,13 +62,22 @@ function Default() {
             <Link to="/ticket">|    Ticket    |</Link>
             <Link to="/enquiry">   Enquiry   |</Link>
             <Link to="/cancellation">   Cancellation    |</Link>
-          
+            </ marquee>
         </ul>
-      
+        <img src={homeLogo} alt="homeLogo" width={1150} height={500}/>
+        
+        
+        {/* <pre> 
+             ACTIVE ROUTES<br/><br/>
+            KOL - HYD (MON-SUN) <br/><br/>
+            KOL - PUNE (MON-SUN) <br/><br/>
+            HYD - BANG (MON-SUN) <br/><br/>
+        </pre>
+         */}
 
       <Switch>
         <Route path="/train">
-          <Train />
+          <FormUp/>
         </Route>
         <Route path="/ticket">
           <FormTic/>
@@ -91,12 +102,12 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-/*ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);*/
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <App />,
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
