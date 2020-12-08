@@ -3,6 +3,7 @@ import axios from 'axios';
 import ReactDOM from 'react-dom';
 
 
+
 export default class FormEq extends React.Component {
     constructor(props) {
         super(props);
@@ -49,14 +50,36 @@ export default class FormEq extends React.Component {
 
 }
 
-function PassengerInfo(props) {
-    console.log('Passenger Details: '+props);
-    return (
-    <div>
-    <p>Contact: {props.value.contact_no}</p>
-    <p>Name: {props.value.passenger_name}</p>
-    <p>Start City: {props.value.start_city}</p>
-    <p>End City: {props.value.end_city}</p>
-    </div>
-    )
-}
+// function PassengerInfo(props) {
+//     console.log('Passenger Details: '+props);
+//     return (
+//     <div>
+//     <p>Contact: {props.value.contact_no}</p>
+//     <p>Name: {props.value.passenger_name}</p>
+//     <p>Start City: {props.value.start_city}</p>
+//     <p>End City: {props.value.end_city}</p>
+//     </div>
+//     )
+// }
+ function PassengerInfo(props) {
+   console.log('Passenger Details: '+props);
+       return (
+       <div>
+         <table>
+  <tr>
+    <th>CONTACT</th>
+    <th>NAME</th>
+    <th>START CITY</th>
+    <th>DESTINATION</th>
+  </tr>
+      <tr> 
+        <td> {props.value.contact_no}</td>
+       <td> {props.value.passenger_name}</td>
+       <td> {props.value.start_city}</td>
+       <td> {props.value.end_city}</td> 
+       </tr>
+       </table>
+      </div>
+       )
+   }
+  

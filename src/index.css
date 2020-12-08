@@ -23,6 +23,11 @@ ul{
   background-color: darkgrey;
 
 }
+table,th,td{
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 15px;
+}
 
 
 code {

@@ -9,6 +9,7 @@ import FormCan from './CancelForm';
 import FormTic from './TicketForm';
 import FormUp from './UpdateForm';
 import homeLogo from './homeLogo.jpg';
+import HomeUI from './Home';
 import {
   BrowserRouter as Router,
   Switch,
@@ -47,12 +48,19 @@ function Cancellation(){
   )
 }
 
+function Home(){
+  return(
+    <h2 className="home">Cancellation</h2>
+  )
+}
+
 function Default() {
   return (<Router>
     <div>
       <h1>WELCOME TO TICKET BOOKING SERVICE</h1>
   <ul>
- < marquee behavior="scroll" scrollamount="3" direction="left" onmouseover="this.stop();" onmouseout="this.start();">    
+ < marquee behavior="scroll" scrollamount="3" direction="left" onmouseover="this.setAttribute('scrollamount',0);" onmouseout="this.start();">    
+           <Link to="/">    Home    </Link>
             <Link to="/passenger">|   Passenger    </Link>
           {/* </li>
           <li> */}
@@ -64,7 +72,7 @@ function Default() {
             <Link to="/cancellation">   Cancellation    |</Link>
             </ marquee>
         </ul>
-        <img src={homeLogo} alt="homeLogo" width={1150} height={500}/>
+        {/* <img src={homeLogo} alt="homeLogo" width={1150} height={500}/> */}
         
         
         {/* <pre> 
@@ -90,6 +98,9 @@ function Default() {
           </Route>
         <Route path="/cancellation">
           <FormCan/>
+          </Route>
+        <Route path="/">
+          <HomeUI/>
           </Route>
       </Switch>
     </div>
